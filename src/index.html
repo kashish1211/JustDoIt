@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo List</title>
+
+    <!-- Bootstrap -->
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   
+
+    <style>
+      body {
+	 background: #352f5b;
+	 font-family: "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+ input[type='text'] {
+	 color: #fff;
+	 outline: none;
+	 background: rgba(0, 0, 0, 0.2);
+	 max-width: 440px;
+	 border: 1px solid rgba(0, 0, 0, 0.1);
+	 transition: 0.24s all ease-in-out;
+}
+ input[type='text']:focus {
+	 background: rgba(0, 0, 0, 0.2);
+	 box-shadow: none;
+	 border-color: rgba(255, 255, 255, 0.2);
+}
+ .container {
+	 max-width: 440px;
+}
+ h1 {
+	 font-size: 36px;
+}
+ .todos li {
+	 background: #423a6f;
+	 display: flex;
+	 align-items: center;
+	 justify-content: space-between;
+}
+ .delete {
+	 cursor: pointer;
+}
+ .todos .hide {
+	 display: none;
+
+}
+
+#completedTaskList .content {
+  color: grey;
+  text-decoration: line-through;
+}
+ 
+    </style>
+  </head>
+  <body>
+    
+
+
+    <div class="container">
+      <section class="todo mt-5 mx-auto">
+        <h1 class="text-light mb-3">Todo</h1>
+  
+        <form class="add mt-4" autocomplete="off" onSubmit="App.createTask(); return false;">
+          <div class="form-group">
+            <label for="task" class="text-light mb-3">Add a task</label>
+            <input type="text" class="form-control text-light" id="newTask" name="task">
+            <input type="submit" hidden="">
+          </div>
+        </form>
+  
+        <ul class="todos list-group text-light" id="taskList" >
+          <div class="taskTemplate" class="checkbox" style="display: none;">
+            <li class=" list-group-item">
+              
+                  <span class="content">Task content goes here...</span>
+                  <input type="checkbox" />
+                </label>
+              
+        </div>
+          
+        </ul>
+        <ul id="completedTaskList" class="list-unstyled todos list-group"></ul>
+  
+        
+      </section>
+    </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/web3/dist/web3.js"></script>
+    <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
